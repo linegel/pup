@@ -151,10 +151,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cleverbeagle/seeder@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@cleverbeagle/seeder/-/seeder-2.0.3.tgz#62f86ca43c9209f873735bc103cf013d3ee4ced1"
-  integrity sha512-q50GGWS4UQCUWhybQVlulCoEAsfWqR5DJspshA/jMvmJ99ydOPHBVhKp3y/E3oNCsjjto38nROyjj15GagMKXQ==
+"@cleverbeagle/seeder@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@cleverbeagle/seeder/-/seeder-1.3.1.tgz#67e73b8a7054e28b9dca13f926a817db87589739"
+  integrity sha512-xNJxHwpG5KxrY5d896Bz4N9V+sL4mfgd96moeW8NiUlqtVdGcj+X63bFjSksooM1i5ibm8n1FUe6VWsXiyZmUA==
   dependencies:
     faker "^4.1.0"
 

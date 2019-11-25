@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.7.4",
-    "@cleverbeagle/seeder": "^2.0.3",
+    "@cleverbeagle/seeder": "^1.3.1",
     "b64-to-blob": "^1.2.19",
     "babel-runtime": "^6.26.0",
     "commonmark": "^0.29.0",
@@ -92,6 +92,7 @@
           ]
         }
       ],
+      "arrow-parens": "off",
       "max-len": 0,
       "no-alert": 0,
       "no-console": 0,
