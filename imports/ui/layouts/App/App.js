@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
 import autoBind from 'react-autobind';
 import { Switch, Route } from 'react-router-dom';
 import { Grid } from 'react-bootstrap';
@@ -38,7 +39,6 @@ import ExamplePage from '../../pages/ExamplePage/ExamplePage';
 import VerifyEmailAlert from '../../components/VerifyEmailAlert/VerifyEmailAlert';
 import GDPRConsentModal from '../../components/GDPRConsentModal/GDPRConsentModal';
 import { onLogin, onLogout } from '../../../modules/redux/actions';
-import withTrackerSSR from '../../../modules/with-tracker-ssr';
 import getUserName from '../../../modules/get-user-name';
 
 const StyledApp = styled.div`
@@ -153,9 +153,7 @@ const mapDispatchToProps = dispatch => ({
   handleOnLogout: data => dispatch(onLogout(data)),
 });
 
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
-  withTrackerSSR(() => {
+const trackedApp = withTracker(() => {
     const app = Meteor.subscribe('app');
     const loggingIn = Meteor.loggingIn();
     const user = Meteor.user();
@@ -174,5 +172,7 @@ export default compose(
       emailAddress,
       emailVerified: user && user.emails ? user && user.emails && user.emails[0].verified : true,
     };
-  }),
+  },
 )(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(trackedApp);
